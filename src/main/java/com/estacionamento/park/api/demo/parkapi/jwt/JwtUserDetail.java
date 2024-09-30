@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.User;
 
 public class JwtUserDetail extends User {
 
-    private Usuario usuario;
+    private final Usuario usuario;
 
     public JwtUserDetail(Usuario usuario) {
         super(usuario.getUsername(), usuario.getPassword(), AuthorityUtils.createAuthorityList(usuario.getRole().name()));
