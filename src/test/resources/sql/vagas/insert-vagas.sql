@@ -8,3 +8,4 @@ values (3,"julia@gmail.com", "$2a$12$BEjol64DvTGJkdqtlisRkOSsuv4uNajZVeKAYEs/Oy0
 insert into vagas(id, codigo, status) values(1, "A-01", "LIVRE");
 insert into vagas(id, codigo, status) values(2, "A-02", "OCUPADA");
 insert into vagas(id, codigo, status) values(3, "A-03", "LIVRE");
+

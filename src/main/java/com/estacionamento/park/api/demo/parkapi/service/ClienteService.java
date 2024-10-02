@@ -1,6 +1,7 @@
 package com.estacionamento.park.api.demo.parkapi.service;
 
 import com.estacionamento.park.api.demo.parkapi.entity.Cliente;
+import com.estacionamento.park.api.demo.parkapi.entity.ClienteVaga;
 import com.estacionamento.park.api.demo.parkapi.exception.CpfUniqueViolationException;
 import com.estacionamento.park.api.demo.parkapi.exception.EntityNotFoundException;
 import com.estacionamento.park.api.demo.parkapi.repository.ClienteRepository;
@@ -42,5 +43,12 @@ public class ClienteService {
     @Transactional(readOnly = true)
     public Cliente buscarPorUsuarioId(long id) {
         return clienteRepository.findByUsuarioId(id);
+    }
+
+    @Transactional(readOnly = true)
+    public Cliente buscarPorCpf(String cpf) {
+        return clienteRepository.findByCpf(cpf).orElseThrow(
+                () -> new EntityNotFoundException(String.format("Cliente com CPF %s não encontrado", cpf))
+        );
     }
 }
